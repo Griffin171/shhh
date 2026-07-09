@@ -1,0 +1,505 @@
+@font-face{
+  font-family: GameFont;
+  src: url("./fonts/OMORI_GAME2.ttf");
+}
+
+body{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-image: url("./sprites/others/!polaroidBG_FA_day.rpgmvp.png");
+
+  background-repeat: repeat;
+  background-position: 100% 0; 
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 100% 0; 
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+#disclamer{
+  background-color: black;
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+#disc-text{
+  display: flex;
+  justify-self: center;
+  align-content: center;
+  width: 100%;
+  height: 80%;
+}
+
+#d-text{
+  font-family: GameFont, sans-serif;
+  font-size: 7vh;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  width: 70%;
+  height: 60%;
+  text-align: center;
+  animation: 3s fading forwards;
+  user-select: none;
+}
+
+@media  (max-width: 1554px) {
+  #d-text{
+    font-size: 5vh;
+  }
+}
+
+@media  (max-width: 1000px) {
+  #d-text{
+    font-size: 3vh;
+  }
+}
+
+@media  (max-width: 260px) {
+  #d-text{
+    font-size: 2vh;
+  }
+}
+
+#caution{
+  background-color: rgb(190, 187, 187);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+#game-link a{
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+#disc-button{
+  display: flex;
+  justify-self: center;
+  align-content: center;
+  width: 100%;
+  height: 20%;
+}
+
+#d-button{
+  font-family: GameFont, sans-serif;
+  font-size: 33px;
+  text-align: center;
+  color: rgb(226, 226, 226);
+  background-color: #000000;
+  outline: 3px solid white;
+  margin: auto;
+  width: 4.5em;
+  height: 1.3em;
+  position: relative;
+  cursor: pointer;
+  border-radius: 1px;
+  transition: transform 0.3s;
+  animation: 3s fading forwards;
+  user-select: none;
+}
+
+#d-button:hover{
+  transform: scale(1.05);
+}
+
+
+@keyframes fading {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
+
+@keyframes fading-rev {
+  0%    {opacity: 1;}
+  100%  {opacity: 0;}
+}
+
+@keyframes fading-bc-rev {
+  0%    {opacity: 1;}
+  100%  {opacity: 0;}
+}
+
+#bg-wrap{
+  position: absolute;
+  overflow: hidden;
+}
+
+#bg-wrap img{
+  overflow: hidden;
+}
+
+#game-containe-wrap{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+ 
+}
+
+.game-container{
+  position: relative;
+  width: 480px;
+  height: 640px;
+  /* outline: 1px solid white; */
+  transform: scale(1.4);
+}
+
+.game-container canvas{
+  image-rendering: pixelated;
+}
+
+#discript-wrapper{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 3%;
+  width: 100%;
+  height: 28%;
+}
+
+.discription {
+  background-color: #000000;
+  position: absolute;
+  flex-direction: column;
+  width: 125%;
+  height: 0%;
+  overflow: hidden;
+  outline: solid #FFFFFF;
+  border: solid black 3px;
+  justify-content: space-between;
+  animation: open 0.1s linear forwards;
+}
+
+.discription.closing {
+  animation: close 0.1s linear forwards;
+}
+
+@keyframes open {
+  0%{
+    height: 0%;
+  }
+  100%{
+    height: 65%;
+  }
+}
+
+@keyframes close {
+  0%{
+    height: 65%;
+  }
+  100%{
+    height: 0%;
+  }
+}
+
+#text-div-wrap{
+  display: inline-block
+}
+
+#text-div{
+  font-family: GameFont, sans-serif;;
+  font-size: 33px;
+  padding-left: 15px;
+  color: #FFFFFF;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typing 1s steps(20),
+    cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50%{ border-color: transparent;}
+}
+
+@keyframes typing {
+  from{ width: 0;}
+}
+
+#img-div {
+  position: absolute; 
+  bottom: 0; 
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 23%;
+}
+
+#pointer{
+  margin-right: 30px;
+  width: 40px;
+  height: 20px;
+  animation: movePointer 1s ease-in-out infinite;
+}
+
+#pointer2{
+  width: 5vh;
+  height: 2.5vh;
+  animation: movePointer2 1s ease-in-out infinite;
+}
+
+@keyframes movePointer {
+  0% {
+    transform: translateX(0); 
+  }
+  50% {
+    transform: translateX(10px); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+@keyframes movePointer2 {
+  0% {
+    transform: translateX(0); 
+  }
+  50% {
+    transform: translateX(1vh); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+#menu{
+  width: 100%;
+  height: 100%;
+  background-color: #522e2e62;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+#title-sprite{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 30%;
+  pointer-events: none;
+  user-select: none;
+}
+
+#title-anim{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 90%;
+  height: 30%;
+  pointer-events: none;
+  user-select: none;
+}
+
+#sunny-sprite{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  pointer-events: none;
+  user-select: none;
+}
+
+#menu-buttons-wrap{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#top-bar {
+  position: relative;
+  display: flex;
+
+  width: 100%;
+  height: 10%;
+
+  justify-content: end;
+  align-items: center;
+}
+
+#guide{
+  display: flex;
+  margin-right: 1vh;
+  position: relative;
+
+  font-family: GameFont, sans-serif;
+  font-size: 6vh;
+  color: rgb(0, 0, 0);
+  padding-left: 1%;
+  font-weight: bold;
+
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  animation: 3s fading forwards;
+}
+
+
+#guide-info-wrap{
+  position: relative;
+  width: 50vh;
+  height: 5vh;
+}
+
+#guide-info{
+  position: absolute;
+  width: 50vh;
+  height: 50vh;
+  top: -60vh;
+
+  background-color: black; 
+  border: 0.5vh solid white; 
+  outline: 0.2vh solid black;
+  
+  animation: slideDown 0.5s forwards;
+
+  user-select: none;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+#guide-info img{
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+
+@keyframes slideDown {
+  0%{
+    top: -60vh;
+  }
+  100%{
+    top: 0px;
+  }
+}
+
+@keyframes slideUp {
+  0%{
+    top: 0px;
+  }
+  100%{
+    top: -60vh;
+  }
+}
+
+#bottom-bar {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bot-button-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  height: 60%;
+}
+
+.m-button{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+
+  width: 25%;
+  height: 90%;
+
+  font-family: GameFont, sans-serif;
+  font-size: 5vh;
+  color: rgb(226, 226, 226);
+  padding-left: 1%;
+  font-weight: bold;
+  
+  background-color: black; 
+  border: 0.5vh solid white; 
+  outline: 0.2vh solid black;
+
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s;
+  animation: 3s fading forwards;
+}
+
+#g-link a{
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+#git-link a{
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  color: rgb(255, 255, 255);
+}
+
+.m-button:hover {
+  transform: scale(1.05);
+}
+
+@media  (max-width: 1700px) {
+  .m-button{
+    font-size: 4.5vh;
+  }
+}
+
+@media  (max-width: 1550px) {
+  .m-button{
+    font-size: 4vh;
+  }
+}
+
+@media  (max-width: 1400px) {
+  .m-button{
+    font-size: 3.5vh;
+  }
+}
+
+@media  (max-width: 1200px) {
+  .m-button{
+    font-size: 3vh;
+  }
+}
+
+#black-screen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+  background-color: black;
+  animation: 3s fading forwards;
+  
+}
