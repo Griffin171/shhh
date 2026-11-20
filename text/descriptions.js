@@ -3,7 +3,7 @@ window.textConfig = {
   boxes: "Cardboard boxes are littered across the house.",
   flovers: "An ordinary houseplant. Nothing special about it.",
   photos: "Some family photos.",
-  piano: "A grand piano. <br> The word \"OMORI\" is etched across rhe center.",
+  piano: "A grand piano. <br> The word \"FAITH\" is etched across the center.",
   shelf: "A bunch of books.",
   eshelf: "This bookcase has been cleared out.",
   windows: "It's a beautiful day outside... but inside is better.",
